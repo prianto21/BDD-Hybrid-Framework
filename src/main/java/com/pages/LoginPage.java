@@ -7,9 +7,9 @@ public class LoginPage {
 	private WebDriver driver;
 
 //	1. By Locators
-	private By username=By.name("username");
+	private By username=By.name("user-name");
 	private By password=By.name("password");
-	private By login=By.className("btn btn-success btn-block btn-lg");
+	private By login=By.id("login-button");
 //	2.Consctructor of the page class;
 	public LoginPage(WebDriver driver) {
 		this.driver=driver;
@@ -30,6 +30,10 @@ public class LoginPage {
 	}
 	public void klikLogin() {
 		driver.findElement(login).click();
+	}
+	
+	public boolean verifyBtnLogin() {
+		return driver.findElement(login).isDisplayed();
 	}
 	
 }
